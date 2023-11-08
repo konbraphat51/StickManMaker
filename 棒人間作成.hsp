@@ -1,40 +1,40 @@
-zoom = 10		//Šg‘å—¦
-screen 0 ,50 *zoom ,50 *zoom		//Šg‘å‰æ–Ê
-screen 1 ,50 ,50 ,8					//À•¨‘å
+zoom = 10		//æ‹¡å¤§ç‡
+screen 0 ,50 *zoom ,50 *zoom		//æ‹¡å¤§ç”»é¢
+screen 1 ,50 ,50 ,8					//å®Ÿç‰©å¤§
 gsel 1,2
-screen 2 ,200 ,555					//ƒŠƒXƒg‰æ–Ê
+screen 2 ,200 ,555					//ãƒªã‚¹ãƒˆç”»é¢
 buffer 3
 screen 4
 gsel 4 ,-1
 buffer 5 ,50 *zoom ,50 *zoom
-screen 6 ,600 ,300					//Œ¨’²ß‘‹
+screen 6 ,600 ,300					//è‚©èª¿ç¯€çª“
 gsel 6 ,-1
 onexit gosub*exit
 boon_list = {"
-ñ
-‰E•I
-¶•I
-‰Eè
-¶è
-˜
-‰E•GŠÔÚ
-¶•GŠÔÚ
-‰E‘«
-¶‘«
+é¦–
+å³è‚˜
+å·¦è‚˜
+å³æ‰‹
+å·¦æ‰‹
+è…°
+å³è†é–“æ¥
+å·¦è†é–“æ¥
+å³è¶³
+å·¦è¶³
 "}
 
 gsel 2
-pos 5,5 :objsize 190,440 :font "MSƒSƒVƒbƒN",40 :objmode 2
+pos 5,5 :objsize 190,440 :font "MSã‚´ã‚·ãƒƒã‚¯",40 :objmode 2
 listbox select_boon , 0 ,boon_list
-font "MSƒSƒVƒbƒN",20
+font "MSã‚´ã‚·ãƒƒã‚¯",20
 objsize 95,50
-button gosub "‰æ‘œ•Û‘¶",*pic_save
+button gosub "ç”»åƒä¿å­˜",*pic_save
 pos 100,445
-button gosub "‰æ‘œ‘I‘ğ",*pic_select
+button gosub "ç”»åƒé¸æŠ",*pic_select
 pos 5 ,500
-button gosub "F•ÏX",*color_select
+button gosub "è‰²å¤‰æ›´",*color_select
 pos 100 ,500
-button gosub "Œ¨’²®",*shouder_pos_adjust_sub
+button gosub "è‚©èª¿æ•´",*shouder_pos_adjust_sub
 
 head_size = 10
 #define mq_zoom		*zoom
@@ -77,83 +77,83 @@ await 16 :loop
 *draw_sub
 	redraw 0
 	
-	//Šg‘å
+	//æ‹¡å¤§
 	gsel 0
 	color 255,255,255 :boxf
 	pos 0,0 :gcopy 5 ,0,0 ,50 mq_zoom ,50 mq_zoom
 	color 0,0,0 :line 0 ,ginfo_sy /2 ,ginfo_sx ,ginfo_sy /2 :line ginfo_sx/2 ,0 ,ginfo_sx/2 ,ginfo_sy
 	color 180,180,230 :line ginfo_sx /5*1 ,0 ,ginfo_sx /5*1 ,ginfo_sy :line ginfo_sx /5*4 ,0 ,ginfo_sx /5*4 ,ginfo_sy
 	color red,green,blue
-	line neck_x 		mq_zoom ,neck_y 		mq_zoom ,waist_x 		mq_zoom ,waist_y mq_zoom 												//“·‘Ì
-	line right_shouder_x mq_zoom,right_shouder_y mq_zoom,right_elbow_x 	mq_zoom ,right_elbow_y mq_zoom 								//‰E“ñ
-	line right_elbow_x 	mq_zoom ,right_elbow_y 	mq_zoom ,right_hand_x	mq_zoom ,right_hand_y mq_zoom 						//‰E˜r
-	line left_shouder_x	mq_zoom ,left_shouder_y	mq_zoom ,left_elbow_x 	mq_zoom ,left_elbow_y mq_zoom 								//¶“ñ
-	line left_elbow_x 	mq_zoom ,left_elbow_y 	mq_zoom ,left_hand_x 	mq_zoom ,left_hand_y mq_zoom 							//¶˜r
-	line waist_x 		mq_zoom ,waist_y 		mq_zoom ,right_knee_x 	mq_zoom ,right_knee_y mq_zoom 									//‰E‘Ú
-	line right_knee_x 	mq_zoom ,right_knee_y 	mq_zoom ,right_foot_x 	mq_zoom ,right_foot_y mq_zoom 							//‰Eãø
-	line waist_x 		mq_zoom ,waist_y 		mq_zoom ,left_knee_x 	mq_zoom ,left_knee_y mq_zoom 										//¶‘Ú
-	line left_knee_x 	mq_zoom ,left_knee_y 	mq_zoom ,left_foot_x 	mq_zoom ,left_foot_y mq_zoom 	//¶ãø
-	circle  (neck_x -(head_size/2)) mq_zoom 	,(neck_y -head_size) mq_zoom 	,(neck_x +(head_size/2)) mq_zoom ,neck_y mq_zoom ,1	//“ª
-	color 255,255,255 :circle  (neck_x -(head_size/2)) mq_zoom 	+1,(neck_y -head_size) mq_zoom 	+1,(neck_x +(head_size/2)) mq_zoom -1,neck_y mq_zoom -1,1	//“ª
+	line neck_x 		mq_zoom ,neck_y 		mq_zoom ,waist_x 		mq_zoom ,waist_y mq_zoom 												//èƒ´ä½“
+	line right_shouder_x mq_zoom,right_shouder_y mq_zoom,right_elbow_x 	mq_zoom ,right_elbow_y mq_zoom 								//å³äºŒ
+	line right_elbow_x 	mq_zoom ,right_elbow_y 	mq_zoom ,right_hand_x	mq_zoom ,right_hand_y mq_zoom 						//å³è…•
+	line left_shouder_x	mq_zoom ,left_shouder_y	mq_zoom ,left_elbow_x 	mq_zoom ,left_elbow_y mq_zoom 								//å·¦äºŒ
+	line left_elbow_x 	mq_zoom ,left_elbow_y 	mq_zoom ,left_hand_x 	mq_zoom ,left_hand_y mq_zoom 							//å·¦è…•
+	line waist_x 		mq_zoom ,waist_y 		mq_zoom ,right_knee_x 	mq_zoom ,right_knee_y mq_zoom 									//å³è…¿
+	line right_knee_x 	mq_zoom ,right_knee_y 	mq_zoom ,right_foot_x 	mq_zoom ,right_foot_y mq_zoom 							//å³è„›
+	line waist_x 		mq_zoom ,waist_y 		mq_zoom ,left_knee_x 	mq_zoom ,left_knee_y mq_zoom 										//å·¦è…¿
+	line left_knee_x 	mq_zoom ,left_knee_y 	mq_zoom ,left_foot_x 	mq_zoom ,left_foot_y mq_zoom 	//å·¦è„›
+	circle  (neck_x -(head_size/2)) mq_zoom 	,(neck_y -head_size) mq_zoom 	,(neck_x +(head_size/2)) mq_zoom ,neck_y mq_zoom ,1	//é ­
+	color 255,255,255 :circle  (neck_x -(head_size/2)) mq_zoom 	+1,(neck_y -head_size) mq_zoom 	+1,(neck_x +(head_size/2)) mq_zoom -1,neck_y mq_zoom -1,1	//é ­
 	
 	redraw 0
 	redraw 1
 	
-	//À•¨
+	//å®Ÿç‰©
 	gsel 1
 	color 255,255,255 :boxf
 	color red,green,blue
-	line neck_x 		 ,neck_y 		,waist_x 		 ,waist_y  												//“·‘Ì
-	line right_shouder_x ,right_shouder_y,right_elbow_x	 ,right_elbow_y  								//‰E“ñ
-	line right_elbow_x 	 ,right_elbow_y	,right_hand_x	 ,right_hand_y  						//‰E˜r
-	line left_shouder_x	 ,left_shouder_y,left_elbow_x 	 ,left_elbow_y  								//¶“ñ
-	line left_elbow_x 	 ,left_elbow_y 	,left_hand_x 	 ,left_hand_y  							//¶˜r
-	line waist_x 		 ,waist_y 		,right_knee_x 	 ,right_knee_y  									//‰E‘Ú
-	line right_knee_x 	 ,right_knee_y 	,right_foot_x 	 ,right_foot_y  							//‰Eãø
-	line waist_x 		 ,waist_y 		,left_knee_x 	 ,left_knee_y  										//¶‘Ú
+	line neck_x 		 ,neck_y 		,waist_x 		 ,waist_y  												//èƒ´ä½“
+	line right_shouder_x ,right_shouder_y,right_elbow_x	 ,right_elbow_y  								//å³äºŒ
+	line right_elbow_x 	 ,right_elbow_y	,right_hand_x	 ,right_hand_y  						//å³è…•
+	line left_shouder_x	 ,left_shouder_y,left_elbow_x 	 ,left_elbow_y  								//å·¦äºŒ
+	line left_elbow_x 	 ,left_elbow_y 	,left_hand_x 	 ,left_hand_y  							//å·¦è…•
+	line waist_x 		 ,waist_y 		,right_knee_x 	 ,right_knee_y  									//å³è…¿
+	line right_knee_x 	 ,right_knee_y 	,right_foot_x 	 ,right_foot_y  							//å³è„›
+	line waist_x 		 ,waist_y 		,left_knee_x 	 ,left_knee_y  										//å·¦è…¿
 	line left_knee_x 	 ,left_knee_y 	,left_foot_x 	 ,left_foot_y 
-	circle  (neck_x -(head_size/2))  	,(neck_y -head_size)  	,(neck_x +(head_size/2))  ,neck_y  ,1	//“ª
-	color 255,255,255 :circle  (neck_x -(head_size/2))  	+1,(neck_y -head_size)  	+1,(neck_x +(head_size/2))  -1,neck_y  -1,1	//“ª
+	circle  (neck_x -(head_size/2))  	,(neck_y -head_size)  	,(neck_x +(head_size/2))  ,neck_y  ,1	//é ­
+	color 255,255,255 :circle  (neck_x -(head_size/2))  	+1,(neck_y -head_size)  	+1,(neck_x +(head_size/2))  -1,neck_y  -1,1	//é ­
 	
 	
 	redraw 1
 	redraw 0
 	
-	//ƒŠƒXƒg‰æ–Ê
+	//ãƒªã‚¹ãƒˆç”»é¢
 	gsel 2
 	color 255,255,255 :boxf
 	color 0,0,0
 	pos 5,410
 	switch select_boon
 		case 0
-			mes "ñ"
+			mes "é¦–"
 		swbreak
 		case 1
-			mes "‰E•I"
+			mes "å³è‚˜"
 		swbreak
 		case 2
-			mes "¶•I"
+			mes "å·¦è‚˜"
 		swbreak
 		case 3
-			mes "‰Eè"
+			mes "å³æ‰‹"
 		swbreak
 		case 4
-			mes "¶è"
+			mes "å·¦æ‰‹"
 		swbreak
 		case 5
-			mes "˜"
+			mes "è…°"
 		swbreak
 		case 6
-			mes "‰E•GŠÔÚ"
+			mes "å³è†é–“æ¥"
 		swbreak
 		case 7
-			mes "¶•GŠÔÚ"
+			mes "å·¦è†é–“æ¥"
 		swbreak
 		case 8
-			mes "‰E‘«"
+			mes "å³è¶³"
 		swbreak
 		case 9
-			mes "¶‘«"
+			mes "å·¦è¶³"
 		swbreak
 	swend
 
@@ -162,7 +162,7 @@ await 16 :loop
 return
 
 *key_sub
-	getkey click		,1	//¶ƒNƒŠƒbƒN
+	getkey click		,1	//å·¦ã‚¯ãƒªãƒƒã‚¯
 return
 
 *boon_sub
@@ -225,17 +225,17 @@ return
 	gsel 1
 	dialog "bmp",17,
 	if stat == 0{
-		dialog "³‚µ‚­‘I‘ğ‚³‚ê‚Ü‚¹‚ñ‚Å‚µ‚½",0
+		dialog "æ­£ã—ãé¸æŠã•ã‚Œã¾ã›ã‚“ã§ã—ãŸ",0
 		return
 	}
 	bmpsave refstr
-	dialog "u"+refstr+"v‚ğ•Û‘¶‚µ‚Ü‚µ‚½"
+	dialog "ã€Œ"+refstr+"ã€ã‚’ä¿å­˜ã—ã¾ã—ãŸ"
 return
 
 *pic_select
-	dialog "”wŒi‚Æ‚µ‚Ä‰æ‘œ‚ğg—p‚µ‚Ü‚·‚©H",2
+	dialog "èƒŒæ™¯ã¨ã—ã¦ç”»åƒã‚’ä½¿ç”¨ã—ã¾ã™ã‹ï¼Ÿ",2
 	if stat == 7{
-		dialog "”wŒi‚ğƒŠƒZƒbƒg‚µ‚Ü‚·‚©H",2
+		dialog "èƒŒæ™¯ã‚’ãƒªã‚»ãƒƒãƒˆã—ã¾ã™ã‹ï¼Ÿ",2
 		if stat == 6{
 			buffer 5
 			return
@@ -245,8 +245,8 @@ return
 		}
 	}
 	if stat == 6{
-		dialog "‰æ‘œ‚ğ‘I‘ğ‚µ‚Ä‚­‚¾‚³‚¢",0
-		dialog "bmp|jpg|png",16,"‰æ‘œƒtƒ@ƒCƒ‹"
+		dialog "ç”»åƒã‚’é¸æŠã—ã¦ãã ã•ã„",0
+		dialog "bmp|jpg|png",16,"ç”»åƒãƒ•ã‚¡ã‚¤ãƒ«"
 		if stat == 0 :return
 		buffer 3:picload refstr
 		temp_x = ginfo_sx
@@ -261,7 +261,7 @@ return
 	point_y = 0
 	size = 50
 	if temp_x != temp_y{
-		dialog "g—p”ÍˆÍi³•ûŒ`j‚ğ‘I‘ğ‚µ‚Ä‚­‚¾‚³‚¢",0
+		dialog "ä½¿ç”¨ç¯„å›²ï¼ˆæ­£æ–¹å½¢ï¼‰ã‚’é¸æŠã—ã¦ãã ã•ã„",0
 		repeat
 			redraw 0
 			
@@ -277,8 +277,8 @@ return
 			}
 	
 			color 0,0,255
-			line point_x ,point_y ,point_x +size	,point_y		//ã•Ó
-			line point_x ,point_y ,point_x 			,point_y +size	//¶•Ó
+			line point_x ,point_y ,point_x +size	,point_y		//ä¸Šè¾º
+			line point_x ,point_y ,point_x 			,point_y +size	//å·¦è¾º
 			line point_x +size ,point_y ,point_x +size ,point_y +size
 			line point_x ,point_y +size ,point_x +size ,point_y +size
 	
@@ -294,13 +294,13 @@ return
 		
 			if click == 0 and select_mode == 1{
 				select_mode == 0
-				dialog "‚±‚ê‚ÅŒˆ’è‚µ‚Ü‚·‚©H",2
+				dialog "ã“ã‚Œã§æ±ºå®šã—ã¾ã™ã‹ï¼Ÿ",2
 				if stat == 6 :break
 			}
 		
 		await 16 :loop
 	}else{
-		dialog "‘I‘ğ‚³‚ê‚½‰æ‘œ‚ª³•ûŒ`‚Å‚ ‚é‚½‚ßAŠg‘å‚µ‚Ü‚·"
+		dialog "é¸æŠã•ã‚ŒãŸç”»åƒãŒæ­£æ–¹å½¢ã§ã‚ã‚‹ãŸã‚ã€æ‹¡å¤§ã—ã¾ã™"
 	}
 	
 	gsel 5
@@ -311,7 +311,7 @@ return
 return
 
 *color_select
-	dialog "–_lŠÔ‚ÌF‚ğ‘I‘ğ‚µ‚Ä‚­‚¾‚³‚¢",0
+	dialog "æ£’äººé–“ã®è‰²ã‚’é¸æŠã—ã¦ãã ã•ã„",0
 	dialog "",33
 	if stat == 0 :return
 	red = ginfo_r
@@ -322,15 +322,15 @@ return
 *shouder_pos_adjust_sub
 	gsel 6 ,1
 	color 0,0,0 :line ginfo_sx/2 ,0 ,ginfo_sx/2 ,130
-	color 0,0,150 :font "MSƒSƒVƒbƒN" ,60
-	pos 0,0 :mes "¶Œ¨" :pos ginfo_sx/2 ,0 :mes "‰EŒ¨"
-	color 0,0,0 :font "MSƒSƒVƒbƒN" ,30 :objmode 0
-	pos 0,60 :mes "•ªq" :pos 90 ,60 :input left_shouder_den ,100,30 ,3
-	pos 0,95 :mes "•ª•ê" :pos 90 ,95 :input left_shouder_num ,100,30 ,3
-	pos ginfo_sx/2 ,60 :mes "•ªq" :pos ginfo_sx/2 +90 ,60 :input right_shouder_den ,100,30 ,3
-	pos ginfo_sx/2 ,95 :mes "•ª•ê" :pos ginfo_sx/2 +90 ,95 :input right_shouder_num ,100,30 ,3
+	color 0,0,150 :font "MSã‚´ã‚·ãƒƒã‚¯" ,60
+	pos 0,0 :mes "å·¦è‚©" :pos ginfo_sx/2 ,0 :mes "å³è‚©"
+	color 0,0,0 :font "MSã‚´ã‚·ãƒƒã‚¯" ,30 :objmode 0
+	pos 0,60 :mes "åˆ†å­" :pos 90 ,60 :input left_shouder_den ,100,30 ,3
+	pos 0,95 :mes "åˆ†æ¯" :pos 90 ,95 :input left_shouder_num ,100,30 ,3
+	pos ginfo_sx/2 ,60 :mes "åˆ†å­" :pos ginfo_sx/2 +90 ,60 :input right_shouder_den ,100,30 ,3
+	pos ginfo_sx/2 ,95 :mes "åˆ†æ¯" :pos ginfo_sx/2 +90 ,95 :input right_shouder_num ,100,30 ,3
 	line 0,130,ginfo_sx,130
-	pos 10,150 :objsize 100,40 :button gosub"Š®—¹",*shouder_pos_adjust_sub_a
+	pos 10,150 :objsize 100,40 :button gosub"å®Œäº†",*shouder_pos_adjust_sub_a
 	temp_a = 0
 	click = 0
 	repeat
@@ -347,7 +347,7 @@ return
 return
 
 *exit
-	dialog "ì‹Æ‚ğI—¹‚µ‚Ü‚·‚©H" ,3
+	dialog "ä½œæ¥­ã‚’çµ‚äº†ã—ã¾ã™ã‹ï¼Ÿ" ,3
 	if stat == 6{
 		end
 	}
@@ -357,8 +357,8 @@ return
 return
 
 /*
-E•\‹L‚Ì¶‰E‚ÆÀ¿‚Ì¶‰E‚Í‹t
-œ7/18•ÏX“_ŠT—v
-	E’†‰›ü
-	E”wŒiƒŠƒZƒbƒg‚Ì•s‹ï‡‰ü‘P
-	E1/5A4/5ü
+ãƒ»è¡¨è¨˜ã®å·¦å³ã¨å®Ÿè³ªã®å·¦å³ã¯é€†
+â—7/18å¤‰æ›´ç‚¹æ¦‚è¦
+	ãƒ»ä¸­å¤®ç·š
+	ãƒ»èƒŒæ™¯ãƒªã‚»ãƒƒãƒˆã®ä¸å…·åˆæ”¹å–„
+	ãƒ»1/5ã€4/5ç·š
